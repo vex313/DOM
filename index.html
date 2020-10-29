@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<style>
+#container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: black;
+}
+#animate {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: white;
+}
+body {
+  background: #555;
+}
+
+.content {
+  max-width: 500px;
+  margin: auto;
+  background: white;
+  padding: 10px;
+}
+</style>
+
+
+<body>
+<h2 onclick="changeText(this)">(STISNI)</h2>
+<p><button onclick="myMove()">STISNI</button></p> 
+
+<div id ="container">
+  <div id ="animate"></div>
+</div>
+
+<script>
+function myMove() {
+  var elem = document.getElementById("animate");   
+  var pos = 0;
+  var id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.top = pos + "px"; 
+      elem.style.left = pos + "px"; 
+    }
+	
+  }
+}
+
+</script>
+<script>
+function changeText(id) {
+  id.innerHTML = "ovaj dole";
+}
+</script>
+</body>
+</html>
